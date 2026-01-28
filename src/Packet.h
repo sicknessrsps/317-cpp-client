@@ -1,0 +1,158 @@
+#pragma once
+
+namespace SDL_Client
+{
+    struct PacketIn {
+        // Names based on https://www.rune-server.ee/runescape-development/rs-503-client-and-server/informative-threads/622541-great-nxt-beta-dump-thread.html
+
+        static int SIZE[256];
+
+        static constexpr int CAM_LOOKAT = 177;
+        static constexpr int CAM_RESET = 107;
+        static constexpr int CAM_SETPOS = 166;
+        static constexpr int CAM_SHAKE = 35;
+        static constexpr int IF_CHAT = 164;
+        static constexpr int IF_CHAT_STICKY = 218;
+        static constexpr int CHAT_FILTER_SETTINGS = 206;
+        static constexpr int CLEAR_MAP_FLAG = 78;
+        static constexpr int FRIENDLIST_LOADED = 221;
+        static constexpr int FRIEND_STATUS = 50;
+        static constexpr int HINT_ARROW = 254;
+        static constexpr int IF_CLOSE = 219;
+        static constexpr int IF_SETANGLE = 230;
+        static constexpr int IF_SETANIM = 200;
+        static constexpr int IF_SETCOLOR = 122;
+        static constexpr int IF_SETHIDE = 171;
+        static constexpr int IF_SETMODEL = 8;
+        static constexpr int IF_SETNPCHEAD = 75;
+        static constexpr int IF_SETOBJECT = 246;
+        static constexpr int IF_SETPLAYERHEAD = 185;
+        static constexpr int IF_SETPOSITION = 70;
+        static constexpr int IF_SETSCROLLPOS = 79;
+        static constexpr int IF_SETTEXT = 126;
+        static constexpr int IF_STOPANIM = 142;
+        static constexpr int IF_VIEWPORT = 97;
+        static constexpr int IF_VIEWPORT_AND_SIDEBAR = 248;
+        static constexpr int IF_VIEWPORT_OVERLAY = 208;
+        static constexpr int IGNORE_LIST = 214;
+        static constexpr int INPUT_AMOUNT = 27;
+        static constexpr int INPUT_NAME = 187;
+        static constexpr int INV_CLEAR = 72;
+        static constexpr int LAST_LOGIN_INFO = 176;
+        static constexpr int LOCAL_PLAYER = 249;
+        static constexpr int LOC_ADD = 151;
+        static constexpr int LOC_CHANGE = 160;
+        static constexpr int LOC_DEL = 101;
+        static constexpr int LOGOUT = 109;
+        static constexpr int MESSAGE_GAME = 253;
+        static constexpr int MESSAGE_PUBLIC = 196;
+        static constexpr int MIDI_JINGLE = 121;
+        static constexpr int MIDI_SONG = 74;
+        static constexpr int MINIMAP_TOGGLE = 99;
+        static constexpr int MULTIZONE = 61;
+        static constexpr int OBJ_ADD = 44;
+        static constexpr int OBJ_COUNT = 84;
+        static constexpr int OBJ_DEL = 156;
+        static constexpr int OBJ_REVEAL = 215;
+        static constexpr int LOC_PLAYER = 147;
+        static constexpr int MAP_PROJECTILE = 117;
+        static constexpr int REBUILD_REGION = 73;
+        static constexpr int REBUILD_REGION_INSTANCE = 241;
+        static constexpr int RESET_ANIMS = 1;
+        static constexpr int RESET_CLIENT_VARCACHE = 68;
+        static constexpr int SET_PLAYER_OP = 104;
+        static constexpr int MAP_SOUND = 105;
+        static constexpr int MAP_ANIM = 4;
+        static constexpr int SYNC_NPCS = 65;
+        static constexpr int SYNC_PLAYERS = 81;
+        static constexpr int SYNTH_SOUND = 174;
+        static constexpr int IF_TAB = 71;
+        static constexpr int TAB_HINT = 24;
+        static constexpr int TAB_SELECTED = 106;
+        static constexpr int UPDATE_INV_FULL = 53;
+        static constexpr int UPDATE_INV_PARTIAL = 34;
+        static constexpr int UPDATE_REBOOT_TIMER = 114;
+        static constexpr int UPDATE_RUNENERGY = 110;
+        static constexpr int UPDATE_RUNWEIGHT = 240;
+        static constexpr int UPDATE_STAT = 134;
+        static constexpr int VARP_LARGE = 87;
+        static constexpr int VARP_SMALL = 36;
+        static constexpr int ZONE_BASE = 85;
+        static constexpr int ZONE_CLEAR = 64;
+        static constexpr int ZONE_UPDATE = 60;
+    };
+
+    // Definition and Initialization of the static array
+    // In a real project, this would go in a .cpp file
+    int PacketIn::SIZE[256] = {0};
+
+    static const bool _init_packet_sizes = []() {
+        PacketIn::SIZE[PacketIn::MAP_ANIM] = 6;
+        PacketIn::SIZE[PacketIn::IF_SETMODEL] = 4;
+        PacketIn::SIZE[PacketIn::TAB_HINT] = 1;
+        PacketIn::SIZE[PacketIn::UPDATE_INV_PARTIAL] = -2;
+        PacketIn::SIZE[PacketIn::CAM_SHAKE] = 4;
+        PacketIn::SIZE[PacketIn::VARP_SMALL] = 3;
+        PacketIn::SIZE[PacketIn::OBJ_ADD] = 5;
+        PacketIn::SIZE[47] = 6;
+        PacketIn::SIZE[PacketIn::FRIEND_STATUS] = 9;
+        PacketIn::SIZE[PacketIn::UPDATE_INV_FULL] = -2;
+        PacketIn::SIZE[PacketIn::ZONE_UPDATE] = -2;
+        PacketIn::SIZE[PacketIn::MULTIZONE] = 1;
+        PacketIn::SIZE[PacketIn::ZONE_CLEAR] = 2;
+        PacketIn::SIZE[PacketIn::SYNC_NPCS] = -2;
+        PacketIn::SIZE[PacketIn::IF_SETPOSITION] = 6;
+        PacketIn::SIZE[PacketIn::IF_TAB] = 3;
+        PacketIn::SIZE[PacketIn::INV_CLEAR] = 2;
+        PacketIn::SIZE[PacketIn::REBUILD_REGION] = 4;
+        PacketIn::SIZE[PacketIn::MIDI_SONG] = 2;
+        PacketIn::SIZE[PacketIn::IF_SETNPCHEAD] = 4;
+        PacketIn::SIZE[PacketIn::IF_SETSCROLLPOS] = 4;
+        PacketIn::SIZE[PacketIn::SYNC_PLAYERS] = -2;
+        PacketIn::SIZE[PacketIn::OBJ_COUNT] = 7;
+        PacketIn::SIZE[PacketIn::ZONE_BASE] = 2;
+        PacketIn::SIZE[PacketIn::VARP_LARGE] = 6;
+        PacketIn::SIZE[PacketIn::IF_VIEWPORT] = 2;
+        PacketIn::SIZE[PacketIn::MINIMAP_TOGGLE] = 1;
+        PacketIn::SIZE[PacketIn::LOC_DEL] = 2;
+        PacketIn::SIZE[PacketIn::SET_PLAYER_OP] = -1;
+        PacketIn::SIZE[PacketIn::MAP_SOUND] = 4;
+        PacketIn::SIZE[PacketIn::TAB_SELECTED] = 1;
+        PacketIn::SIZE[PacketIn::UPDATE_RUNENERGY] = 1;
+        PacketIn::SIZE[PacketIn::UPDATE_REBOOT_TIMER] = 2;
+        PacketIn::SIZE[PacketIn::MAP_PROJECTILE] = 15;
+        PacketIn::SIZE[PacketIn::MIDI_JINGLE] = 4;
+        PacketIn::SIZE[PacketIn::IF_SETCOLOR] = 4;
+        PacketIn::SIZE[PacketIn::IF_SETTEXT] = -2;
+        PacketIn::SIZE[PacketIn::UPDATE_STAT] = 6;
+        PacketIn::SIZE[PacketIn::IF_STOPANIM] = 2;
+        PacketIn::SIZE[PacketIn::LOC_PLAYER] = 14;
+        PacketIn::SIZE[PacketIn::LOC_ADD] = 4;
+        PacketIn::SIZE[PacketIn::OBJ_DEL] = 3;
+        PacketIn::SIZE[PacketIn::LOC_CHANGE] = 4;
+        PacketIn::SIZE[PacketIn::IF_CHAT] = 2;
+        PacketIn::SIZE[PacketIn::CAM_SETPOS] = 6;
+        PacketIn::SIZE[PacketIn::IF_SETHIDE] = 3;
+        PacketIn::SIZE[PacketIn::SYNTH_SOUND] = 5;
+        PacketIn::SIZE[PacketIn::LAST_LOGIN_INFO] = 10;
+        PacketIn::SIZE[PacketIn::CAM_LOOKAT] = 6;
+        PacketIn::SIZE[PacketIn::IF_SETPLAYERHEAD] = 2;
+        PacketIn::SIZE[PacketIn::MESSAGE_PUBLIC] = -1;
+        PacketIn::SIZE[PacketIn::IF_SETANIM] = 4;
+        PacketIn::SIZE[PacketIn::CHAT_FILTER_SETTINGS] = 3;
+        PacketIn::SIZE[PacketIn::IF_VIEWPORT_OVERLAY] = 2;
+        PacketIn::SIZE[PacketIn::IGNORE_LIST] = -2;
+        PacketIn::SIZE[PacketIn::OBJ_REVEAL] = 7;
+        PacketIn::SIZE[PacketIn::IF_CHAT_STICKY] = 2;
+        PacketIn::SIZE[PacketIn::FRIENDLIST_LOADED] = 1;
+        PacketIn::SIZE[PacketIn::IF_SETANGLE] = 8;
+        PacketIn::SIZE[PacketIn::UPDATE_RUNWEIGHT] = 2;
+        PacketIn::SIZE[PacketIn::REBUILD_REGION_INSTANCE] = -2;
+        PacketIn::SIZE[PacketIn::IF_SETOBJECT] = 6;
+        PacketIn::SIZE[PacketIn::IF_VIEWPORT_AND_SIDEBAR] = 4;
+        PacketIn::SIZE[PacketIn::LOCAL_PLAYER] = 3;
+        PacketIn::SIZE[PacketIn::MESSAGE_GAME] = -1;
+        PacketIn::SIZE[PacketIn::HINT_ARROW] = 6;
+        return true;
+    }();
+}

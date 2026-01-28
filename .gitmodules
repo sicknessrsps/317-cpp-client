@@ -1,0 +1,24 @@
+[submodule "vendor/SDL"]
+	path = vendor/SDL
+	url = https://github.com/libsdl-org/SDL.git
+[submodule "vendor/SDL_ttf"]
+	path = vendor/SDL_ttf
+	url = https://github.com/libsdl-org/SDL_ttf.git
+[submodule "vendor/bzip2-cpp"]
+	path = vendor/bzip2-cpp
+	url = https://github.com/joshua-jerred/bzip2-cpp.git
+[submodule "vendor/SDL_image"]
+	path = vendor/SDL_image
+	url = https://github.com/libsdl-org/SDL_image.git
+[submodule "vendor/zlib"]
+	path = vendor/zlib
+	url = https://github.com/madler/zlib.git
+[submodule "vendor/SDL_net"]
+	path = vendor/SDL_net
+	url = https://github.com/sicknessrsps/SDL_net.git
+[submodule "vendor/SDL_mixer"]
+	path = vendor/SDL_mixer
+	url = https://github.com/libsdl-org/SDL_mixer.git
+[submodule "vendor/TinySoundFont"]
+	path = vendor/TinySoundFont
+	url = https://github.com/schellingb/TinySoundFont.git
