@@ -2,6 +2,9 @@
 
 A cross-platform C++ game client for RuneScape revision 317, built with SDL3.
 
+<img width="988" height="686" alt="upscaling" src="https://github.com/user-attachments/assets/a050e028-af92-4980-8088-da5ace59157e" />
+
+
 ## Notable Features
 
 - Fully functional 317 client using the [SDL3 stack](https://wiki.libsdl.org/SDL3/FrontPage)
@@ -28,7 +31,7 @@ If you are a complete beginner you may want to check out the SDL 3 sample projec
 
 ```bash
 # You need to clone with submodules, otherwise SDL will not download.
-git clone [repo url] --depth=1 --recurse-submodules
+git clone https://github.com/sicknessrsps/317-cpp-client.git --depth=1 --recurse-submodules
 ```
 
 **Place your cache files in the `./cache/` directory. When you build and run the client, CMake will automatically copy this directory to the output location, or you can simply use JAGGRAB.**
