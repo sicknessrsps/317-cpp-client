@@ -2995,55 +2995,55 @@ namespace SDL_Client
                 }
                 StopMidi();
                 PrepareGameScreen();
-                return;
+                break;
             case 3:
                 loginMessage0 = "";
                 loginMessage1 = "Invalid username or password.";
-                return;
+                break;
             case 4:
                 loginMessage0 = "Your account has been disabled.";
                 loginMessage1 = "Please check your message-centre for details.";
-                return;
+                break;
             case 5:
                 loginMessage0 = "Your account is already logged in.";
                 loginMessage1 = "Try again in 60 secs...";
-                return;
+                break;
             case 6:
                 loginMessage0 = "RuneScape has been updated!";
                 loginMessage1 = "Please reload this page.";
-                return;
+                break;
             case 7:
                 loginMessage0 = "This world is full.";
                 loginMessage1 = "Please use a different world.";
-                return;
+                break;
             case 8:
                 loginMessage0 = "Unable to connect.";
                 loginMessage1 = "Login server offline.";
-                return;
+                break;
             case 9:
                 loginMessage0 = "Login limit exceeded.";
                 loginMessage1 = "Too many connections from your address.";
-                return;
+                break;
             case 10:
                 loginMessage0 = "Unable to connect.";
                 loginMessage1 = "Bad session id.";
-                return;
+                break;
             case 11:
                 loginMessage0 = "Login server rejected session.";
                 loginMessage1 = "Please try again.";
-                return;
+                break;
             case 12:
                 loginMessage0 = "You need a members account to login to this world.";
                 loginMessage1 = "Please subscribe, or use a different world.";
-                return;
+                break;
             case 13:
                 loginMessage0 = "Could not complete login.";
                 loginMessage1 = "Please try using a different world.";
-                return;
+                break;
             case 14:
                 loginMessage0 = "The server is being updated.";
                 loginMessage1 = "Please wait 1 minute and try again.";
-                return;
+                break;
             case 15:
                 ingame = true;
                 out.position = 0;
@@ -3058,19 +3058,19 @@ namespace SDL_Client
                 menuSize = 0;
                 menuVisible = false;
                 sceneLoadStartTime = SDL_GetTicks();
-                return;
+                break;
             case 16:
                 loginMessage0 = "Login attempts exceeded.";
                 loginMessage1 = "Please wait 1 minute and try again.";
-                return;
+                break;
             case 17:
                 loginMessage0 = "You are standing in a members-only area.";
                 loginMessage1 = "To play on this world move to a free area first";
-                return;
+                break;
             case 20:
                 loginMessage0 = "Invalid loginserver requested";
                 loginMessage1 = "Please try using a different world.";
-                return;
+                break;
             case 21:
                 for (int32_t remaining = connection->Read(); remaining >= 0; remaining--) {
                     loginMessage0 = "You have only just left another world";
@@ -3079,7 +3079,7 @@ namespace SDL_Client
                     SDL_Delay(1000);
                 }
                 Login(usernameInput, passwordInput, reconnect);
-                return;
+                break;
             case -1:
                 if (lastResponse == 0) {
                     if (loginAttempts < 2) {

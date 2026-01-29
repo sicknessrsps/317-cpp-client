@@ -398,7 +398,7 @@ namespace SDL_Client {
          */
         int32_t nodeID = 0;
 
-        bool jaggrabEnabled = true;
+        bool jaggrabEnabled = false;
         NET_StreamSocket* jaggrabSocket = nullptr;
 
         /**
